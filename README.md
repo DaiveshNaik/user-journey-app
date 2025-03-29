@@ -1,69 +1,116 @@
-# Welcome to your Lovable project
 
-## Project info
+# User Management Application
 
-**URL**: https://lovable.dev/projects/e60fa3de-6d4d-491a-b86e-804c0111e1ac
+A React application that integrates with the Reqres API to perform basic user management functions including authentication, listing users, and editing/deleting user records.
 
-## How can I edit this code?
+## Live Demo
 
-There are several ways of editing your application.
+Access the live application at: https://lovable.dev/projects/e60fa3de-6d4d-491a-b86e-804c0111e1ac
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e60fa3de-6d4d-491a-b86e-804c0111e1ac) and start prompting.
+### Authentication
+- Login screen with email/password authentication
+- Token-based authentication with session persistence
+- Protected routes that require authentication
 
-Changes made via Lovable will be committed automatically to this repo.
+### User Management
+- Paginated list of users with avatar display
+- View detailed user information
+- Edit user details (first name, last name, email)
+- Delete users with confirmation dialog
+- Success/error notifications for all operations
 
-**Use your preferred IDE**
+### UI/UX
+- Responsive design that works on mobile and desktop
+- Clean, modern interface using Tailwind CSS and Shadcn UI
+- Smooth transitions and loading states
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Technologies Used
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **React**: Frontend framework
+- **TypeScript**: For type safety
+- **React Router**: Navigation between pages
+- **Tailwind CSS**: Styling
+- **Shadcn UI**: Component library
+- **React Query**: Data fetching and caching
+- **Reqres API**: Backend API service
 
-Follow these steps:
+## Getting Started
 
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone <repository-url>
+cd user-management-app
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies:
+```sh
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```sh
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open your browser and navigate to:
+```
+http://localhost:8080
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## API Integration
 
-**Use GitHub Codespaces**
+This application uses the [Reqres API](https://reqres.in/) for demonstration purposes. The following endpoints are used:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- `POST /api/login`: User authentication
+- `GET /api/users?page=<page_number>`: Fetch paginated user list
+- `GET /api/users/<user_id>`: Fetch specific user details
+- `PUT /api/users/<user_id>`: Update user information
+- `DELETE /api/users/<user_id>`: Delete a user
 
-## What technologies are used for this project?
+## Test Credentials
 
-This project is built with .
+To log in to the application, use the following credentials:
+- **Email**: eve.holt@reqres.in
+- **Password**: cityslicka
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Assumptions and Considerations
 
-## How can I deploy this project?
+1. **Mock API Limitations**: 
+   - The Reqres API is a mock API, so changes aren't actually persisted on the server.
+   - When a user is "deleted" or "updated", the changes appear to work in the UI but won't persist if you refresh or revisit the page.
 
-Simply open [Lovable](https://lovable.dev/projects/e60fa3de-6d4d-491a-b86e-804c0111e1ac) and click on Share -> Publish.
+2. **Authentication**:
+   - The auth token is stored in localStorage for persistence between sessions.
+   - There is no token expiration handling as the Reqres API doesn't provide token expiration.
 
-## I want to use a custom domain - is that possible?
+3. **Error Handling**:
+   - The application handles common API errors and displays user-friendly messages.
+   - Network errors and API timeouts are handled gracefully.
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+4. **Performance Considerations**:
+   - React Query is used for efficient data fetching, caching, and state management.
+   - List pagination is implemented to improve performance with large datasets.
+
+5. **Accessibility**:
+   - Basic accessibility features are implemented, including proper semantic HTML and ARIA attributes.
+
+## Future Enhancements
+
+- Add user creation functionality
+- Implement advanced filtering and sorting
+- Add dark mode support
+- Enhance form validation
+- Implement unit and integration tests
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
