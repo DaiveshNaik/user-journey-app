@@ -5,7 +5,7 @@ A React application that integrates with the Reqres API to perform basic user ma
 
 ## Live Demo
 
-Access the live application at: https://lovable.dev/projects/e60fa3de-6d4d-491a-b86e-804c0111e1ac
+Access the live application at: [https://lovable.dev/projects/e60fa3de-6d4d-491a-b86e-804c0111e1ac](https://preview--user-journey-app.lovable.app/)
 
 ## Features
 
